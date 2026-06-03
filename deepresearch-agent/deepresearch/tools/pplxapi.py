@@ -12,7 +12,7 @@ from perplexity import Perplexity
 
 from deepresearch.config.env import PPLX_API_KEY
 
-perplexity_client = Perplexity(api_key=PPLX_API_KEY)
+perplexity_client = Perplexity(api_key=PPLX_API_KEY) if PPLX_API_KEY else None
 
 def perplexity_search_multiple(
     search_queries: List[str],
@@ -48,7 +48,3 @@ def perplexity_search_multiple(
         search_docs.append(result)
         
     return search_docs
-
-
-val = perplexity_search_multiple(search_queries=["Agentic AI"])
-print(val)
