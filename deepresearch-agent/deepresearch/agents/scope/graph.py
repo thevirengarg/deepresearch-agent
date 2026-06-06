@@ -8,7 +8,6 @@ from langgraph.types import Command
 
 from deepresearch.config.llm import LlmService
 from deepresearch.core.constants import ConfigClass, GraphNode, OpikPrompts
-from deepresearch.core.constants import StartEvaluationOpikPrompt
 from deepresearch.core.model import ClarifyWithUser, ResearchQuestion
 from deepresearch.core.opik_prompts import Opik_prompts
 from deepresearch.core.state import AgentInputState, AgentState

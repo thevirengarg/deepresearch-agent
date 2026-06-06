@@ -1,3 +1,4 @@
+import warnings
 from typing import Dict
 
 from fastapi import FastAPI, HTTPException
@@ -10,6 +11,15 @@ from deepresearch.agents.writer.graph import deep_researcher_builder
 from deepresearch.core.constants import ConfigClass
 from deepresearch.interface.schema import ChatRequest, ChatResponse
 from deepresearch.tools.utils import generate_session_id
+
+# LangChain stores structured output on AIMessage.parsed which is typed as None
+# in older versions, causing a harmless Pydantic serialization warning.
+warnings.filterwarnings(
+    "ignore",
+    message=".*PydanticSerializationUnexpectedValue.*",
+    category=UserWarning,
+    module="pydantic",
+)
 
 RECURSION_LIMIT = 50
 

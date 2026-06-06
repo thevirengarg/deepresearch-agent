@@ -13,10 +13,6 @@ GOOGLE_API_KEY = os.getenv('GOOGLE_API_KEY')
 EXA_API_KEY = os.getenv("EXA_API_KEY")
 TAVILY_API_KEY = os.getenv("TAVILY_API_KEY")
 
-# tracing
-OPIK_API_KEY = os.getenv("OPIK_API_KEY")
-
-
 LLM_PROVIDER = os.getenv("LLM_PROVIDER", "openai")
 
 
